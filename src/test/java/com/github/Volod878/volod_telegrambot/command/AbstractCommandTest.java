@@ -3,6 +3,7 @@ package com.github.Volod878.volod_telegrambot.command;
 import com.github.Volod878.volod_telegrambot.bot.VolodTelegrambot;
 import com.github.Volod878.volod_telegrambot.service.SendBotMessageService;
 import com.github.Volod878.volod_telegrambot.service.SendBotMessageServiceImpl;
+import com.github.Volod878.volod_telegrambot.service.TelegramUserService;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
 import org.mockito.internal.verification.VerificationModeFactory;
@@ -18,6 +19,7 @@ abstract class AbstractCommandTest {
 
     protected VolodTelegrambot volodBot = Mockito.mock(VolodTelegrambot.class);
     protected SendBotMessageService sendBotMessageService = new SendBotMessageServiceImpl(volodBot);
+    protected TelegramUserService telegramUserService = Mockito.mock(TelegramUserService.class);
 
     abstract String getCommandName();
 
