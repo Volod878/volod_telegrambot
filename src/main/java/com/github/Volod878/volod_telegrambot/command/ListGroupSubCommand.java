@@ -30,11 +30,17 @@ public class ListGroupSubCommand implements Command {
         TelegramUser telegramUser = telegramUserService.findByChatId(getChatId(update))
                 .orElseThrow(NotFoundException::new);
 
-        String message = "Я нашел все подписки на группы JavaRush: \n\n";
-        String collectedGroups = telegramUser.getGroupSubs().stream()
-                .map(it -> "Группа: " + it.getTitle() + " , ID = " + it.getId() + " \n")
-                .collect(Collectors.joining());
+        String message;
+        if(telegramUser.getGroupSubs().isEmpty()) {
+            message = "Пока нет подписок на группы. Чтобы добавить подписку напиши /addgroupsub";
+        } else {
+            String collectedGroups = telegramUser.getGroupSubs().stream()
+                    .map(it -> "Группа: " + it.getTitle() + " , ID = " + it.getId() + " \n")
+                    .collect(Collectors.joining());
+            message =  String.format("Я нашел все подписки на группы: \n\n %s", collectedGroups);
+        }
 
-        sendBotMessageService.sendMessage(telegramUser.getChatId(), message + collectedGroups);
+        sendBotMessageService.sendMessage(telegramUser.getChatId(), message);
+
     }
 }
