@@ -1,6 +1,8 @@
 package com.github.Volod878.volod_telegrambot.bot;
 
 import com.github.Volod878.volod_telegrambot.command.CommandContainer;
+import com.github.Volod878.volod_telegrambot.javarushclient.JavaRushGroupClient;
+import com.github.Volod878.volod_telegrambot.service.GroupSubService;
 import com.github.Volod878.volod_telegrambot.service.SendBotMessageServiceImpl;
 import com.github.Volod878.volod_telegrambot.service.TelegramUserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,8 +30,8 @@ public class VolodTelegrambot extends TelegramLongPollingBot {
     private final CommandContainer commandContainer;
 
     @Autowired
-    public VolodTelegrambot(TelegramUserService telegramUserService) {
-        this.commandContainer = new CommandContainer(new SendBotMessageServiceImpl(this), telegramUserService);
+    public VolodTelegrambot(TelegramUserService telegramUserService, JavaRushGroupClient groupClient, GroupSubService groupSubService) {
+        this.commandContainer = new CommandContainer(new SendBotMessageServiceImpl(this), telegramUserService, groupClient, groupSubService);
     }
 
     @Override
