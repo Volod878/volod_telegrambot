@@ -4,6 +4,7 @@ import com.Volod878.volod_telegrambot.repository.entity.GroupSub;
 import com.Volod878.volod_telegrambot.repository.entity.TelegramUser;
 import com.Volod878.volod_telegrambot.service.SendBotMessageService;
 import com.Volod878.volod_telegrambot.service.TelegramUserService;
+import org.springframework.util.CollectionUtils;
 import org.telegram.telegrambots.meta.api.objects.Update;
 
 import javax.ws.rs.NotFoundException;
@@ -31,8 +32,8 @@ public class ListGroupSubCommand implements Command {
                 .orElseThrow(NotFoundException::new);
 
         String message;
-        if(telegramUser.getGroupSubs().isEmpty()) {
-            message = "Пока нет подписок на группы. Чтобы добавить подписку напиши /addgroupsub";
+        if(CollectionUtils.isEmpty(telegramUser.getGroupSubs())) {
+            message = "Пока нет подписок на группы. Чтобы добавить подписку напиши /addGroupSub";
         } else {
             String collectedGroups = telegramUser.getGroupSubs().stream()
                     .map(it -> "Группа: " + it.getTitle() + " , ID = " + it.getId() + " \n")

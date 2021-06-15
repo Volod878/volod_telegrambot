@@ -20,11 +20,13 @@ public class HelpCommand implements Command {
 
                     + "Работа с подписками на группы JavaRush:\n"
                     + "%s - подписаться на группу статей\n"
+                    + "%s - отписаться от группы статей\n"
                     + "%s - получить список групп, на которые подписан\n\n"
 
                     + "%s [n] - сгенерировать пароль, где [n] это количество символов в пароле\n",
             CommandName.START.getCommandName(), CommandName.STOP.getCommandName(), CommandName.HELP.getCommandName(), CommandName.STAT.getCommandName(),
-            CommandName.ADD_GROUP_SUB.getCommandName(), CommandName.LIST_GROUP_SUB.getCommandName(), CommandName.PASSWORD.getCommandName());
+            CommandName.ADD_GROUP_SUB.getCommandName(), CommandName.DELETE_GROUP_SUB.getCommandName(), CommandName.LIST_GROUP_SUB.getCommandName(),
+            CommandName.PASSWORD.getCommandName());
 
     public HelpCommand(SendBotMessageService sendBotMessageService) {
         this.sendBotMessageService = sendBotMessageService;

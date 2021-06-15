@@ -26,6 +26,7 @@ public class CommandContainer {
                 .put(CommandName.NO.getCommandName(), new NoCommand(sendBotMessageService))
                 .put(CommandName.ADD_GROUP_SUB.getCommandName(), new AddGroupSubCommand(sendBotMessageService, javaRushGroupClient, groupSubService))
                 .put(CommandName.LIST_GROUP_SUB.getCommandName(), new ListGroupSubCommand(sendBotMessageService, telegramUserService))
+                .put(CommandName.DELETE_GROUP_SUB.getCommandName(), new DeleteGroupSubCommand(sendBotMessageService, groupSubService, telegramUserService))
                 .build();
 
         unknownCommand = new UnknownCommand(sendBotMessageService);
