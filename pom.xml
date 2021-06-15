@@ -8,7 +8,7 @@
 		<version>2.3.9.RELEASE</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.github.Volod878</groupId>
+	<groupId>com.Volod878</groupId>
 	<artifactId>volod_telegrambot</artifactId>
 	<version>0.8.0-SNAPSHOT</version>
 	<name>Volod Telegrambot</name>
