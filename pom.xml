@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>com.Volod878</groupId>
 	<artifactId>volod_telegrambot</artifactId>
-	<version>0.8.0-SNAPSHOT</version>
+	<version>0.9.0-SNAPSHOT</version>
 	<name>Volod Telegrambot</name>
 	<description>Telegram bot for testing</description>
 	<properties>

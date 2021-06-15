@@ -15,8 +15,7 @@ public class HelpCommand implements Command {
                     + "<b>Начать\\закончить работу с ботом</b>\n"
                     + "%s - начать работу со мной\n"
                     + "%s - приостановить работу со мной\n"
-                    + "%s - получить помощь в работе со мной\n"
-                    + "%s - узнать количество подписчиков\n\n"
+                    + "%s - получить помощь в работе со мной\n\n"
 
                     + "Работа с подписками на группы JavaRush:\n"
                     + "%s - подписаться на группу статей\n"
@@ -24,7 +23,7 @@ public class HelpCommand implements Command {
                     + "%s - получить список групп, на которые подписан\n\n"
 
                     + "%s [n] - сгенерировать пароль, где [n] это количество символов в пароле\n",
-            CommandName.START.getCommandName(), CommandName.STOP.getCommandName(), CommandName.HELP.getCommandName(), CommandName.STAT.getCommandName(),
+            CommandName.START.getCommandName(), CommandName.STOP.getCommandName(), CommandName.HELP.getCommandName(),
             CommandName.ADD_GROUP_SUB.getCommandName(), CommandName.DELETE_GROUP_SUB.getCommandName(), CommandName.LIST_GROUP_SUB.getCommandName(),
             CommandName.PASSWORD.getCommandName());
 
